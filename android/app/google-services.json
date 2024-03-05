@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "522315001318",
+    "project_id": "air-quality-monitoring-akt34k",
+    "storage_bucket": "air-quality-monitoring-akt34k.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522315001318:android:1b41359b8b5995f9c9fa27",
+        "android_client_info": {
+          "package_name": "com.mycompany.airqualitymonitoring374237468"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522315001318-c0a27ki0l28mgnt4mq3d4dqho5fbh5v7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.airqualitymonitoring374237468",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "522315001318-avbor6a3c53e3ckq351uefg2tskv6mq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWRX1B73eYXOevMQ8CJn1ZT_ldi-YPlRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522315001318-avbor6a3c53e3ckq351uefg2tskv6mq8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "522315001318-vmipje0qbe6plrghv5s5spfos1iciie7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.airqualitymonitoring374237468"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>522315001318-vmipje0qbe6plrghv5s5spfos1iciie7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.522315001318-vmipje0qbe6plrghv5s5spfos1iciie7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>522315001318-c0a27ki0l28mgnt4mq3d4dqho5fbh5v7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBjZmfg_6I8z_ZksJ11qtlKkcmcYabManA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>522315001318</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.airqualitymonitoring374237468</string>
+	<key>PROJECT_ID</key>
+	<string>air-quality-monitoring-akt34k</string>
+	<key>STORAGE_BUCKET</key>
+	<string>air-quality-monitoring-akt34k.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:522315001318:ios:4c4fe55e1a1e9c84c9fa27</string>
+</dict>
+</plist>
