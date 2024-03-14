@@ -120,7 +120,7 @@ class _SignInWidgetState extends State<SignInWidget>
                     'AirQuality Tracker',
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).tertiary,
+                          color: FlutterFlowTheme.of(context).indigoDye,
                         ),
                   ),
                 ),
@@ -136,6 +136,12 @@ class _SignInWidgetState extends State<SignInWidget>
                       ),
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: Image.asset(
+                            'assets/images/asdfghj.jpg',
+                          ).image,
+                        ),
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Align(
@@ -165,7 +171,12 @@ class _SignInWidgetState extends State<SignInWidget>
                                   'Welcome Back',
                                   textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
-                                      .headlineMedium,
+                                      .headlineMedium
+                                      .override(
+                                        fontFamily: 'Urbanist',
+                                        color: FlutterFlowTheme.of(context)
+                                            .indigoDye,
+                                      ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -174,7 +185,12 @@ class _SignInWidgetState extends State<SignInWidget>
                                     'Fill out the information below in order to access your account.',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                   ),
                                 ),
                                 Padding(
@@ -356,12 +372,14 @@ class _SignInWidgetState extends State<SignInWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
-                                            .tertiary,
+                                            .indigoDye,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Manrope',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                             ),
                                         elevation: 3.0,
                                         borderSide: const BorderSide(
@@ -383,7 +401,12 @@ class _SignInWidgetState extends State<SignInWidget>
                                       'Or sign in with',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
-                                          .labelLarge,
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                          ),
                                     ),
                                   ),
                                 ),
@@ -503,8 +526,8 @@ class _SignInWidgetState extends State<SignInWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: RichText(
-                                      textScaleFactor: MediaQuery.of(context)
-                                          .textScaleFactor,
+                                      textScaler:
+                                          MediaQuery.of(context).textScaler,
                                       text: TextSpan(
                                         children: [
                                           TextSpan(
@@ -517,7 +540,7 @@ class _SignInWidgetState extends State<SignInWidget>
                                             style: TextStyle(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .tertiary,
+                                                      .indigoDye,
                                               fontWeight: FontWeight.w600,
                                             ),
                                             mouseCursor:

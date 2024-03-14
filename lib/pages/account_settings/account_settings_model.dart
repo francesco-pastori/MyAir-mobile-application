@@ -1,12 +1,17 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'test_interactive_map_widget.dart' show TestInteractiveMapWidget;
+import 'account_settings_widget.dart' show AccountSettingsWidget;
 import 'package:flutter/material.dart';
 
-class TestInteractiveMapModel
-    extends FlutterFlowModel<TestInteractiveMapWidget> {
+class AccountSettingsModel extends FlutterFlowModel<AccountSettingsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for Switch widget.
+  bool? switchValue1;
+  // State field(s) for Switch widget.
+  bool? switchValue2;
+  // State field(s) for Switch widget.
+  bool? switchValue3;
 
   /// Initialization and disposal methods.
 

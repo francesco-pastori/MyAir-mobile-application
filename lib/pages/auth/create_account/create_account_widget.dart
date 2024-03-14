@@ -74,7 +74,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                       'AirQuality Tracker',
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Urbanist',
-                            color: FlutterFlowTheme.of(context).tertiary,
+                            color: FlutterFlowTheme.of(context).indigoDye,
                           ),
                     ),
                   ),
@@ -88,6 +88,12 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     ),
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: Image.asset(
+                          'assets/images/asdfghj.jpg',
+                        ).image,
+                      ),
                       boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
@@ -97,8 +103,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                       ],
                       borderRadius: BorderRadius.circular(12.0),
                       border: Border.all(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        width: 2.0,
+                        color: FlutterFlowTheme.of(context).alternate,
                       ),
                     ),
                     child: Align(
@@ -112,7 +117,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                             Text(
                               'Create an account',
                               textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context).displaySmall,
+                              style: FlutterFlowTheme.of(context)
+                                  .displaySmall
+                                  .override(
+                                    fontFamily: 'Urbanist',
+                                    color:
+                                        FlutterFlowTheme.of(context).indigoDye,
+                                  ),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -120,7 +131,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               child: Text(
                                 'Let\'s get started by filling out the form below.',
                                 textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context).labelLarge,
+                                style: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      fontFamily: 'Manrope',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
                               ),
                             ),
                             Padding(
@@ -383,12 +400,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
-                                        FlutterFlowTheme.of(context).tertiary,
+                                        FlutterFlowTheme.of(context).indigoDye,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
                                           fontFamily: 'Manrope',
-                                          color: Colors.white,
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
                                         ),
                                     elevation: 3.0,
                                     borderSide: const BorderSide(
@@ -408,8 +426,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 child: Text(
                                   'Or sign up with',
                                   textAlign: TextAlign.center,
-                                  style:
-                                      FlutterFlowTheme.of(context).labelLarge,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Manrope',
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                      ),
                                 ),
                               ),
                             ),
@@ -485,8 +508,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: RichText(
-                                  textScaleFactor:
-                                      MediaQuery.of(context).textScaleFactor,
+                                  textScaler: MediaQuery.of(context).textScaler,
                                   text: TextSpan(
                                     children: [
                                       const TextSpan(
@@ -501,7 +523,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                               fontFamily: 'Manrope',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .tertiary,
+                                                      .indigoDye,
                                               fontWeight: FontWeight.w600,
                                             ),
                                         mouseCursor: SystemMouseCursors.click,

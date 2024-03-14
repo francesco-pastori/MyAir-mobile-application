@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
@@ -55,28 +54,13 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
           preferredSize:
               Size.fromHeight(MediaQuery.sizeOf(context).height * 0.05),
           child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).indigoDye,
             automaticallyImplyLeading: false,
-            leading: FlutterFlowIconButton(
-              borderColor: FlutterFlowTheme.of(context).primaryBackground,
-              borderRadius: 20.0,
-              borderWidth: 1.0,
-              buttonSize: 40.0,
-              fillColor: FlutterFlowTheme.of(context).primaryBackground,
-              icon: Icon(
-                Icons.menu,
-                color: FlutterFlowTheme.of(context).primaryText,
-                size: 24.0,
-              ),
-              onPressed: () {
-                print('IconButton pressed ...');
-              },
-            ),
             title: Text(
               'News',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Urbanist',
-                    color: FlutterFlowTheme.of(context).primaryText,
+                    color: FlutterFlowTheme.of(context).alternate,
                     fontSize: 22.0,
                     fontWeight: FontWeight.normal,
                   ),
@@ -105,17 +89,19 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                         unselectedLabelStyle: const TextStyle(),
                         indicatorColor: FlutterFlowTheme.of(context).tertiary,
                         padding: const EdgeInsets.all(4.0),
-                        tabs: const [
+                        tabs: [
                           Tab(
                             text: 'Global',
                             icon: FaIcon(
                               FontAwesomeIcons.newspaper,
+                              color: FlutterFlowTheme.of(context).primaryText,
                             ),
                           ),
                           Tab(
                             text: 'Local',
                             icon: Icon(
                               Icons.location_pin,
+                              color: FlutterFlowTheme.of(context).primaryText,
                             ),
                           ),
                         ],
@@ -144,13 +130,13 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
+                                          width: 20.0,
+                                          height: 20.0,
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
                                               FlutterFlowTheme.of(context)
-                                                  .primary,
+                                                  .indigoDye,
                                             ),
                                           ),
                                         ),
@@ -182,231 +168,17 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                                                 (context, eachResultIndex) {
                                               final eachResultItem =
                                                   eachResult[eachResultIndex];
-                                              return Container(
-                                                width: double.infinity,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                ),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 12.0),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    8.0,
-                                                                    16.0,
-                                                                    12.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      16.0),
-                                                          child: Image.network(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              getJsonField(
-                                                                eachResultItem,
-                                                                r'''$.image''',
-                                                              )?.toString(),
-                                                              'https://images.ctfassets.net/81iqaqpfd8fy/2OzF48CniECEQC4auKmuuC/cde364f67a78843a0108ff98e543fa16/pollution.jpg?fm=webp&h=620&w=1440',
-                                                            ),
-                                                            width:
-                                                                double.infinity,
-                                                            height: 150.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          getJsonField(
-                                                            eachResultItem,
-                                                            r'''$.title''',
-                                                          ).toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    16.0,
-                                                                    4.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                getJsonField(
-                                                                  eachResultItem,
-                                                                  r'''$.source.title''',
-                                                                )
-                                                                    .toString()
-                                                                    .maybeHandleOverflow(
-                                                                      maxChars:
-                                                                          30,
-                                                                      replacement:
-                                                                          '…',
-                                                                    ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .start,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium,
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  await launchURL(
-                                                                      getJsonField(
-                                                                    eachResultItem,
-                                                                    r'''$.url''',
-                                                                  ).toString());
-                                                                },
-                                                                child: Icon(
-                                                                  Icons.link,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  size: 24.0,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                          SingleChildScrollView(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                AuthUserStreamWidget(
-                                  builder: (context) =>
-                                      FutureBuilder<ApiCallResponse>(
-                                    future: (_model.apiRequestCompleter2 ??=
-                                            Completer<ApiCallResponse>()
-                                              ..complete(
-                                                  GetNewsPollutionCall.call(
-                                                language: currentUserDocument
-                                                    ?.language?.name,
-                                              )))
-                                        .future,
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      final listViewGetNewsPollutionResponse =
-                                          snapshot.data!;
-                                      return Builder(
-                                        builder: (context) {
-                                          final eachResultIT =
-                                              GetNewsPollutionCall.results(
-                                                    listViewGetNewsPollutionResponse
-                                                        .jsonBody,
-                                                  )?.toList() ??
-                                                  [];
-                                          return RefreshIndicator(
-                                            onRefresh: () async {
-                                              setState(() => _model
-                                                  .apiRequestCompleter2 = null);
-                                              await _model
-                                                  .waitForApiRequestCompleted2();
-                                            },
-                                            child: ListView.builder(
-                                              padding: EdgeInsets.zero,
-                                              shrinkWrap: true,
-                                              scrollDirection: Axis.vertical,
-                                              itemCount: eachResultIT.length,
-                                              itemBuilder:
-                                                  (context, eachResultITIndex) {
-                                                final eachResultITItem =
-                                                    eachResultIT[
-                                                        eachResultITIndex];
-                                                return Container(
+                                              return Padding(
+                                                padding: const EdgeInsets.all(12.0),
+                                                child: Container(
                                                   width: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .alternate,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
                                                   ),
                                                   child: Padding(
                                                     padding:
@@ -438,10 +210,10 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 getJsonField(
-                                                                  eachResultITItem,
+                                                                  eachResultItem,
                                                                   r'''$.image''',
                                                                 )?.toString(),
-                                                                'https://www.ucl.ac.uk/news/sites/news/files/air_pollution_sm.jpg',
+                                                                'https://images.ctfassets.net/81iqaqpfd8fy/2OzF48CniECEQC4auKmuuC/cde364f67a78843a0108ff98e543fa16/pollution.jpg?fm=webp&h=620&w=1440',
                                                               ),
                                                               width: double
                                                                   .infinity,
@@ -460,7 +232,7 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                                                                       0.0),
                                                           child: Text(
                                                             getJsonField(
-                                                              eachResultITItem,
+                                                              eachResultItem,
                                                               r'''$.title''',
                                                             ).toString(),
                                                             style: FlutterFlowTheme
@@ -494,7 +266,7 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                                                                             0.0),
                                                                 child: Text(
                                                                   getJsonField(
-                                                                    eachResultITItem,
+                                                                    eachResultItem,
                                                                     r'''$.source.title''',
                                                                   )
                                                                       .toString()
@@ -535,7 +307,7 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                                                                       () async {
                                                                     await launchURL(
                                                                         getJsonField(
-                                                                      eachResultITItem,
+                                                                      eachResultItem,
                                                                       r'''$.url''',
                                                                     ).toString());
                                                                   },
@@ -552,6 +324,251 @@ class _NewsPageWidgetState extends State<NewsPageWidget>
                                                           ),
                                                         ),
                                                       ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            },
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                          SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                AuthUserStreamWidget(
+                                  builder: (context) =>
+                                      FutureBuilder<ApiCallResponse>(
+                                    future: (_model.apiRequestCompleter2 ??=
+                                            Completer<ApiCallResponse>()
+                                              ..complete(
+                                                  GetNewsPollutionCall.call(
+                                                language:
+                                                    valueOrDefault<String>(
+                                                  valueOrDefault(
+                                                      currentUserDocument?.lang,
+                                                      ''),
+                                                  'ita',
+                                                ),
+                                              )))
+                                        .future,
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 20.0,
+                                            height: 20.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .indigoDye,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      final listViewGetNewsPollutionResponse =
+                                          snapshot.data!;
+                                      return Builder(
+                                        builder: (context) {
+                                          final eachResultIT =
+                                              GetNewsPollutionCall.results(
+                                                    listViewGetNewsPollutionResponse
+                                                        .jsonBody,
+                                                  )?.toList() ??
+                                                  [];
+                                          return RefreshIndicator(
+                                            onRefresh: () async {
+                                              setState(() => _model
+                                                  .apiRequestCompleter2 = null);
+                                              await _model
+                                                  .waitForApiRequestCompleted2();
+                                            },
+                                            child: ListView.builder(
+                                              padding: EdgeInsets.zero,
+                                              shrinkWrap: true,
+                                              scrollDirection: Axis.vertical,
+                                              itemCount: eachResultIT.length,
+                                              itemBuilder:
+                                                  (context, eachResultITIndex) {
+                                                final eachResultITItem =
+                                                    eachResultIT[
+                                                        eachResultITIndex];
+                                                return Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          8.0, 8.0, 8.0, 8.0),
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12.0),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  12.0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        8.0,
+                                                                        16.0,
+                                                                        12.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          16.0),
+                                                              child:
+                                                                  Image.network(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  getJsonField(
+                                                                    eachResultITItem,
+                                                                    r'''$.image''',
+                                                                  )?.toString(),
+                                                                  'https://www.ucl.ac.uk/news/sites/news/files/air_pollution_sm.jpg',
+                                                                ),
+                                                                width: double
+                                                                    .infinity,
+                                                                height: 150.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              getJsonField(
+                                                                eachResultITItem,
+                                                                r'''$.title''',
+                                                              ).toString(),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium,
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        16.0,
+                                                                        4.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    getJsonField(
+                                                                      eachResultITItem,
+                                                                      r'''$.source.title''',
+                                                                    )
+                                                                        .toString()
+                                                                        .maybeHandleOverflow(
+                                                                          maxChars:
+                                                                              30,
+                                                                          replacement:
+                                                                              '…',
+                                                                        ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .start,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium,
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      await launchURL(
+                                                                          getJsonField(
+                                                                        eachResultITItem,
+                                                                        r'''$.url''',
+                                                                      ).toString());
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .link,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 );

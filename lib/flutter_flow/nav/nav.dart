@@ -83,18 +83,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? const NavBarPage() : const SignInWidget(),
         ),
         FFRoute(
-          name: 'MoreDetails',
-          path: '/moreDetails',
-          builder: (context, params) => const MoreDetailsWidget(),
-        ),
-        FFRoute(
-          name: 'HomePage',
-          path: '/HomePage',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'HomePage')
-              : const HomePageWidget(),
-        ),
-        FFRoute(
           name: 'PollutionMap',
           path: '/pollutionMap',
           builder: (context, params) => params.isEmpty
@@ -131,20 +119,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'editProfile',
-          path: '/editProfile',
-          requireAuth: true,
-          builder: (context, params) => const EditProfileWidget(),
-        ),
-        FFRoute(
           name: 'ChangePassword',
           path: '/changePassword',
           builder: (context, params) => const ChangePasswordWidget(),
         ),
         FFRoute(
-          name: 'testInteractiveMap',
-          path: '/testInteractiveMap',
-          builder: (context, params) => const TestInteractiveMapWidget(),
+          name: 'EditProfile',
+          path: '/editProfile',
+          requireAuth: true,
+          builder: (context, params) => const EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'AccountSettings',
+          path: '/accountSettings',
+          requireAuth: true,
+          builder: (context, params) => const AccountSettingsWidget(),
+        ),
+        FFRoute(
+          name: 'ContactSupport',
+          path: '/contactSupport',
+          builder: (context, params) => const ContactSupportWidget(),
+        ),
+        FFRoute(
+          name: 'HelpSupport',
+          path: '/helpSupport',
+          builder: (context, params) => const HelpSupportWidget(),
+        ),
+        FFRoute(
+          name: 'Diary',
+          path: '/diary',
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'Diary') : const DiaryWidget(),
+        ),
+        FFRoute(
+          name: 'chat_ai_Screen',
+          path: '/chatAiScreen',
+          builder: (context, params) => const ChatAiScreenWidget(),
+        ),
+        FFRoute(
+          name: 'HomePage',
+          path: '/HomePage',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'HomePage')
+              : const HomePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -327,11 +344,11 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Center(
                   child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
+                    width: 20.0,
+                    height: 20.0,
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
+                        FlutterFlowTheme.of(context).indigoDye,
                       ),
                     ),
                   ),

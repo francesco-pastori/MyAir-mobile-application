@@ -54,24 +54,16 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
 
-  late Color primaryBtnText;
-  late Color lineColor;
-  late Color backgroundComponents;
-  late Color redPantone;
-  late Color honeydew;
-  late Color nonPhotoBlue;
+  late Color mindaro;
+  late Color lightGreen;
+  late Color lightGreen2;
+  late Color emerald;
+  late Color keppel;
+  late Color verdigris;
+  late Color bondiBlue;
   late Color cerulean;
-  late Color berkeleyBlue;
-  late Color richBlackFOGRA39;
-  late Color blue;
-  late Color turquoise;
-  late Color cultured;
-  late Color cerise;
-  late Color common0;
-  late Color common1;
-  late Color common2;
-  late Color common3;
-  late Color common4;
+  late Color lapisLazuli;
+  late Color indigoDye;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -144,13 +136,13 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF9489F5);
-  late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFF6D5FED);
+  late Color primary = const Color(0xFFAA86FF);
+  late Color secondary = const Color(0xFF63B0B6);
+  late Color tertiary = const Color(0xFFD1345B);
   late Color alternate = const Color(0xFFE0E3E7);
   late Color primaryText = const Color(0xFF101213);
   late Color secondaryText = const Color(0xFF57636C);
-  late Color primaryBackground = const Color(0xFFF1F4F8);
+  late Color primaryBackground = const Color(0xFFE0E3E7);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
   late Color accent1 = const Color(0x4D9489F5);
   late Color accent2 = const Color(0x4E39D2C0);
@@ -161,24 +153,16 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE74852);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color primaryBtnText = const Color(0xFFFFFFFF);
-  late Color lineColor = const Color(0xFFE0E3E7);
-  late Color backgroundComponents = const Color(0xFF1D2428);
-  late Color redPantone = const Color(0xFFE63946);
-  late Color honeydew = const Color(0xFFF1FAEE);
-  late Color nonPhotoBlue = const Color(0xFFA8DADC);
-  late Color cerulean = const Color(0xFF457B9D);
-  late Color berkeleyBlue = const Color(0xFF1D3557);
-  late Color richBlackFOGRA39 = const Color(0xFF070707);
-  late Color blue = const Color(0xFF3A28DE);
-  late Color turquoise = const Color(0xFF34D1BF);
-  late Color cultured = const Color(0xFFEFEFEF);
-  late Color cerise = const Color(0xFFD1345B);
-  late Color common0 = const Color(0x00000000);
-  late Color common1 = const Color(0xFFFFFFFF);
-  late Color common2 = const Color(0x430B0D0F);
-  late Color common3 = const Color(0x33000000);
-  late Color common4 = const Color(0xFF757575);
+  late Color mindaro = const Color(0xFFD9ED92);
+  late Color lightGreen = const Color(0xFFB5E48C);
+  late Color lightGreen2 = const Color(0xFF99D98C);
+  late Color emerald = const Color(0xFF76C893);
+  late Color keppel = const Color(0xFF52B69A);
+  late Color verdigris = const Color(0xFF34A0A4);
+  late Color bondiBlue = const Color(0xFF168AAD);
+  late Color cerulean = const Color(0xFF1A759F);
+  late Color lapisLazuli = const Color(0xFF1E6091);
+  late Color indigoDye = const Color(0xFF184E77);
 }
 
 abstract class Typography {
@@ -334,7 +318,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   Color get tertiaryColor => tertiary;
 
   late Color primary = const Color(0xFF9489F5);
-  late Color secondary = const Color(0xFF39D2C0);
+  late Color secondary = const Color(0x8E39D2C0);
   late Color tertiary = const Color(0xFF6D5FED);
   late Color alternate = const Color(0xFF22282F);
   late Color primaryText = const Color(0xFFFFFFFF);
@@ -350,24 +334,16 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE74852);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color primaryBtnText = const Color(0xFFFFFFFF);
-  late Color lineColor = const Color(0xFF22282F);
-  late Color backgroundComponents = const Color(0xFF1D2428);
-  late Color redPantone = const Color(0xFFE63946);
-  late Color honeydew = const Color(0xFFF1FAEE);
-  late Color nonPhotoBlue = const Color(0xFFA8DADC);
-  late Color cerulean = const Color(0xFF457B9D);
-  late Color berkeleyBlue = const Color(0xFF1D3557);
-  late Color richBlackFOGRA39 = const Color(0xFF070707);
-  late Color blue = const Color(0xFF3A28DE);
-  late Color turquoise = const Color(0xFF34D1BF);
-  late Color cultured = const Color(0xFFEFEFEF);
-  late Color cerise = const Color(0xFFD1345B);
-  late Color common0 = const Color(0x00000000);
-  late Color common1 = const Color(0xFFFFFFFF);
-  late Color common2 = const Color(0x430B0D0F);
-  late Color common3 = const Color(0x33000000);
-  late Color common4 = const Color(0xFF757575);
+  late Color mindaro = const Color(0xFFD9ED92);
+  late Color lightGreen = const Color(0xFFB5E48C);
+  late Color lightGreen2 = const Color(0xFF99D98C);
+  late Color emerald = const Color(0xFF76C893);
+  late Color keppel = const Color(0xFF52B69A);
+  late Color verdigris = const Color(0xFF34A0A4);
+  late Color bondiBlue = const Color(0xFF168AAD);
+  late Color cerulean = const Color(0xFF1A759F);
+  late Color lapisLazuli = const Color(0xFF1E6091);
+  late Color indigoDye = const Color(0xFF184E77);
 }
 
 extension TextStyleHelper on TextStyle {
