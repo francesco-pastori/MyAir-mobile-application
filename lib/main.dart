@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -8,7 +9,6 @@ import 'auth/firebase_auth/auth_util.dart';
 import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
-import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
@@ -18,7 +18,13 @@ void main() async {
 
   await FlutterFlowTheme.initialize();
 
-  runApp(const MyApp());
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -81,9 +87,11 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(
         brightness: Brightness.light,
+        useMaterial3: false,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        useMaterial3: false,
       ),
       themeMode: _themeMode,
       routerConfig: _router,
@@ -117,9 +125,10 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'ProfileSettings': const ProfileSettingsWidget(),
-      'HomePage': const HomePageWidget(),
       'PollutionMap': const PollutionMapWidget(),
+      'HomePage': const HomePageWidget(),
       'NewsPage': const NewsPageWidget(),
+      'Diary': const DiaryWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -131,10 +140,10 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        selectedItemColor: FlutterFlowTheme.of(context).primary,
-        unselectedItemColor: const Color(0x8A000000),
-        showSelectedLabels: false,
+        backgroundColor: FlutterFlowTheme.of(context).lapisLazuli,
+        selectedItemColor: FlutterFlowTheme.of(context).alternate,
+        unselectedItemColor: FlutterFlowTheme.of(context).primaryText,
+        showSelectedLabels: true,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
@@ -148,7 +157,7 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_outlined,
+              Icons.map_outlined,
               size: 24.0,
             ),
             label: 'Home',
@@ -156,7 +165,7 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.map_outlined,
+              Icons.home_outlined,
               size: 24.0,
             ),
             label: 'Home',
@@ -167,7 +176,19 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.newspaper_sharp,
               size: 24.0,
             ),
-            label: '',
+            label: 'News',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.date_range_outlined,
+              size: 24.0,
+            ),
+            activeIcon: Icon(
+              Icons.date_range_rounded,
+              size: 32.0,
+            ),
+            label: 'Dairy',
             tooltip: '',
           )
         ],

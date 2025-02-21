@@ -39,10 +39,10 @@ class _ContainerDeleteIconWidgetState extends State<ContainerDeleteIconWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200.0,
-      height: 100.0,
+      width: 50.0,
+      height: 50.0,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).primaryBackground,
+        color: FlutterFlowTheme.of(context).alternate,
       ),
       child: MouseRegion(
         opaque: false,

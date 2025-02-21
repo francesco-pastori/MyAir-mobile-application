@@ -42,36 +42,41 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        automaticallyImplyLeading: false,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30.0,
-          borderWidth: 1.0,
-          buttonSize: 60.0,
-          icon: Icon(
-            Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).primaryText,
-            size: 30.0,
+      appBar: PreferredSize(
+        preferredSize:
+            Size.fromHeight(MediaQuery.sizeOf(context).height * 0.05),
+        child: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).indigoDye,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: FlutterFlowTheme.of(context).alternate,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
           ),
-          onPressed: () async {
-            context.pop();
-          },
-        ),
-        title: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
-          child: Text(
-            'Back',
-            style: FlutterFlowTheme.of(context).displaySmall.override(
-                  fontFamily: 'Urbanist',
-                  fontSize: 16.0,
-                ),
+          title: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+            child: Text(
+              'Back',
+              style: FlutterFlowTheme.of(context).displaySmall.override(
+                    fontFamily: 'Urbanist',
+                    color: FlutterFlowTheme.of(context).alternate,
+                    fontSize: 16.0,
+                  ),
+            ),
           ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 0.0,
         ),
-        actions: const [],
-        centerTitle: false,
-        elevation: 0.0,
       ),
       body: Align(
         alignment: const AlignmentDirectional(0.0, -1.0),
@@ -80,7 +85,14 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
           constraints: const BoxConstraints(
             maxWidth: 570.0,
           ),
-          decoration: const BoxDecoration(),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/asdfghj.jpg',
+              ).image,
+            ),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,7 +138,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   ),
                 ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                 child: Text(
                   'Forgot Password',
                   style: FlutterFlowTheme.of(context).headlineMedium,
@@ -136,11 +148,15 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                 child: Text(
                   'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
-                  style: FlutterFlowTheme.of(context).labelMedium,
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Manrope',
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w600,
+                      ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: SizedBox(
                   width: double.infinity,
                   child: TextFormField(
@@ -149,8 +165,6 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     autofillHints: const [AutofillHints.email],
                     obscureText: false,
                     decoration: InputDecoration(
-                      labelText: 'Your email address...',
-                      labelStyle: FlutterFlowTheme.of(context).labelMedium,
                       hintText: 'Enter your email...',
                       hintStyle: FlutterFlowTheme.of(context).labelMedium,
                       enabledBorder: OutlineInputBorder(
@@ -225,8 +239,12 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).tertiary,
-                      textStyle: FlutterFlowTheme.of(context).titleSmall,
+                      color: FlutterFlowTheme.of(context).indigoDye,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Manrope',
+                                color: FlutterFlowTheme.of(context).alternate,
+                              ),
                       elevation: 3.0,
                       borderSide: const BorderSide(
                         color: Colors.transparent,

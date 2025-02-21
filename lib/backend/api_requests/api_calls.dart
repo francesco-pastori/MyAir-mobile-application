@@ -7,6 +7,62 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
+/// Start OpenAI ChatGPT Group Code
+
+class OpenAIChatGPTGroup {
+  static String baseUrl = 'https://api.openai.com/v1';
+  static Map<String, String> headers = {
+    'Content-Type': 'application/json',
+  };
+  static SendFullPromptCall sendFullPromptCall = SendFullPromptCall();
+}
+
+class SendFullPromptCall {
+  Future<ApiCallResponse> call({
+    String? apiKey = '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',
+    dynamic promptJson,
+  }) async {
+    final prompt = _serializeJson(promptJson);
+    final ffApiRequestBody = '''
+{
+  "model": "gpt-3.5-turbo-0125",
+  "messages": $prompt
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Send Full Prompt',
+      apiUrl: '${OpenAIChatGPTGroup.baseUrl}/chat/completions',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $apiKey',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  int? createdTimestamp(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.created''',
+      ));
+  String? role(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.choices[:].message.role''',
+      ));
+  String? content(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.choices[:].message.content''',
+      ));
+}
+
+/// End OpenAI ChatGPT Group Code
+
 class GetNewsPollutionCall {
   static Future<ApiCallResponse> call({
     String? language = 'eng',
@@ -23,6 +79,7 @@ class GetNewsPollutionCall {
   "resultType": "articles",
   "apiKey": "58715943-f84e-4c5e-a7a5-4ebfd41707a6",
   "forceMaxDataTimeWindow": 31,
+  "isDuplicateFilter": "skipDuplicates",
   "lang": "$language"
 }''';
     return ApiManager.instance.makeApiCall(
@@ -72,7 +129,7 @@ class GetNewsPollutionCall {
 
 class AirQualityCurrentConditionCall {
   static Future<ApiCallResponse> call({
-    String? city = 'Milano',
+    String? city = 'Milan',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'airQualityCurrentCondition',
@@ -92,7 +149,7 @@ class AirQualityCurrentConditionCall {
     );
   }
 
-  static int? overallaqi(dynamic response) => castToType<int>(getJsonField(
+  static int? aqi(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.overall_aqi''',
       ));
@@ -115,6 +172,10 @@ class AirQualityCurrentConditionCall {
   static int? coaqi(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.CO.aqi''',
+      ));
+  static int? pm25aqi(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$["PM2.5"].aqi''',
       ));
 }
 
@@ -256,14 +317,20 @@ class ProfilePicCall {
 }
 
 class PollutionMapInteractiveCall {
-  static Future<ApiCallResponse> call() async {
+  static Future<ApiCallResponse> call({
+    String? lat = '45.46',
+    String? lng = '9.18',
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'pollutionMapInteractive',
       apiUrl:
-          'https://api.mapbox.com/styles/v1/ismaelevilla/cltdfck4a002n01nrge994dfd.html?title=view&access_token=pk.eyJ1IjoiaXNtYWVsZXZpbGxhIiwiYSI6ImNsdGFiMWZ2MTE5MmYybW8xc3hpZG1uMjMifQ.bZnOW7ae8-NuDIDYJuxeTQ&zoomwheel=true&fresh=true#3.1/47.75/17.5/14.7/29',
+          'https://api.mapbox.com/styles/v1/ismaelevilla/clte4z14e00ow01nw25pu1q0b.html?access_token=pk.eyJ1IjoiaXNtYWVsZXZpbGxhIiwiYSI6ImNsdGFiMWZ2MTE5MmYybW8xc3hpZG1uMjMifQ.bZnOW7ae8-NuDIDYJuxeTQ&zoomwheel=true&fresh=true#5.67/$lat/$lng',
       callType: ApiCallType.GET,
       headers: {},
-      params: {},
+      params: {
+        'lat': lat,
+        'lng': lng,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -271,6 +338,38 @@ class PollutionMapInteractiveCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class PlaceAutocompleteCall {
+  static Future<ApiCallResponse> call({
+    String? input = 'Mi',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'placeAutocomplete',
+      apiUrl:
+          'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&key=AIzaSyA_u3dQcWxlKGObgpH3Bkj_qHiwWAo6FHU',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'input': input,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? predictions(dynamic response) => (getJsonField(
+        response,
+        r'''$.predictions[:].structured_formatting.main_text''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class ApiPagingParams {
