@@ -1,4 +1,4 @@
-# MyAir: Air Quality Monitoring Application - for complete version read 'MyAir_Design_Document' [MyAir_Design_Document.pdf](./MyAir_Design_Document.pdf)
+# MyAir: Air Quality Monitoring Application - for complete version read: [MyAir_Design_Document.pdf](./MyAir_Design_Document.pdf)
 
 
 ## Contributors
