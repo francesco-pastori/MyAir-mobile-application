@@ -75,3 +75,7 @@ Integration tests covered all main functionalities of the app, including all nav
 | Francesco Pastori| 2h              | 36h               | 100h           | 10h          |
 | Ismaele Villa    | 2h              | 36h               | 100h           | 2h           |
 
+
+##WARNING
+the code of the application is temporaly private due to privacy issue 
+
