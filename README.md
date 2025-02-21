@@ -76,6 +76,6 @@ Integration tests covered all main functionalities of the app, including all nav
 | Ismaele Villa    | 2h              | 36h               | 100h           | 2h           |
 
 
-##WARNING
-the code of the application is temporaly private due to privacy issue 
+## WARNING
+the code of the application is temporarily private due to privacy issues
 
